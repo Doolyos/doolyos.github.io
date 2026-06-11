@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -29,7 +28,6 @@
 
     h1 {
       font-size: 40px;
-      margin-bottom: 10px;
       font-weight: normal;
     }
 
@@ -37,74 +35,66 @@
       font-size: 14px;
       color: #666;
       margin-bottom: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 20px;
     }
 
     p {
-      margin-bottom: 24px;
       font-size: 18px;
-    }
-
-    .section-title {
-      font-size: 22px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      font-weight: normal;
-    }
-
-    .quote {
-      margin: 30px 0;
-      padding-left: 20px;
-      border-left: 3px solid #999;
-      color: #444;
-      font-style: italic;
+      margin-bottom: 24px;
     }
 
     .footnote {
-      margin-top: 60px;
       font-size: 13px;
       color: #777;
+      margin-top: 60px;
     }
 
-    /* FADE OVERLAY */
+    /* FADE TO BLACK OVERLAY */
     #fadeOverlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+
       background: black;
+
       opacity: 0;
       pointer-events: none;
+
       transition: opacity 2s ease;
+
       z-index: 9999;
+
+      color: yellow;
     }
 
     #fadeOverlay.active {
       opacity: 1;
+      pointer-events: auto;
     }
 
-    /* TABS */
+    /* TABS INSIDE BLACK SPACE */
     .tab-container {
-      margin-top: 80px;
+      margin-top: 120px;
       font-family: "Times New Roman", serif;
       font-size: 12px;
       color: yellow;
+      text-align: center;
     }
 
     .tabs {
       display: flex;
-      gap: 10px;
       justify-content: center;
+      gap: 10px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .tabs button {
       background: black;
       color: yellow;
       border: 1px solid yellow;
-      padding: 5px 10px;
+      padding: 6px 10px;
       cursor: pointer;
       font-size: 12px;
     }
@@ -113,7 +103,8 @@
       display: none;
       max-width: 700px;
       margin: auto;
-      padding: 20px;
+      text-align: left;
+      padding: 10px;
     }
 
     .tab.active {
@@ -121,7 +112,7 @@
     }
 
     .hidden-tab {
-      opacity: 0.1;
+      opacity: 0.15;
     }
 
     .hidden-tab:hover {
@@ -144,35 +135,11 @@
   </div>
 
   <p>
-    Recent analyses of commercially distributed fruits and vegetables indicate a gradual but measurable increase in the use of growth-stabilizing compounds across large-scale agricultural systems.
+    Recent analyses indicate a gradual increase in growth-stabilizing compounds across commercial agricultural systems.
   </p>
 
   <p>
-    While these compounds remain within regulated thresholds, longitudinal studies suggest that cumulative exposure patterns may not be fully understood under current evaluation models.
-  </p>
-
-  <div class="section-title">Observed Trends</div>
-
-  <p>
-    Across multiple distribution networks, produce items such as apples and bananas demonstrate consistent trace signatures of chemical stabilization agents.
-  </p>
-
-  <p>
-    These trends are not inherently unusual, however their increasing normalization warrants continued observation.
-  </p>
-
-  <div class="quote">
-    “The presence of regulation does not necessarily imply the presence of understanding.”
-  </div>
-
-  <p>
-    Further research is ongoing.
-  </p>
-
-  <div class="section-title">Conclusion</div>
-
-  <p>
-    No immediate public risk has been identified.
+    While regulated, cumulative exposure patterns remain insufficiently modeled in current frameworks.
   </p>
 
   <div class="footnote">
@@ -181,50 +148,52 @@
 
 </div>
 
-<div class="tab-container">
+<!-- BLACK REALM (THIS IS WHERE THE STORY GOES) -->
+<div id="fadeOverlay">
 
-  <div class="tabs">
-    <button onclick="openTab('doolyos')">Doolyos</button>
-    <button onclick="openTab('apple')">Apple</button>
-    <button onclick="openTab('banana')">Banana</button>
-    <button onclick="openTab('effect')">Systemic Effect</button>
-    <button onclick="openTab('reader')" class="hidden-tab">---</button>
-  </div>
+  <div class="tab-container">
 
-  <div id="doolyos" class="tab active">
-    <p>
-      Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination outcomes.
-    </p>
-  </div>
+    <div class="tabs">
+      <button onclick="openTab('doolyos')">Doolyos</button>
+      <button onclick="openTab('apple')">Apple</button>
+      <button onclick="openTab('banana')">Banana</button>
+      <button onclick="openTab('effect')">Effect</button>
+      <button onclick="openTab('reader')" class="hidden-tab">---</button>
+    </div>
 
-  <div id="apple" class="tab">
-    <p>
-      “APPLE” functions as a stabilizing cognitive structure associated with non-confrontational reasoning patterns.
-    </p>
-  </div>
+    <div id="doolyos" class="tab active">
+      <p>
+        Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination parameters.
+      </p>
+    </div>
 
-  <div id="banana" class="tab">
-    <p>
-      “BANANA” reflects withdrawal-based cognitive disengagement and emotional neutrality frameworks.
-    </p>
-  </div>
+    <div id="apple" class="tab">
+      <p>
+        “APPLE” functions as a stabilizing cognitive structure associated with compliance-oriented reasoning patterns.
+      </p>
+    </div>
 
-  <div id="effect" class="tab">
-    <p>
-      Repeated discontinuity events appear to increase symbolic cognition emergence across monitored datasets.
-    </p>
-  </div>
+    <div id="banana" class="tab">
+      <p>
+        “BANANA” reflects withdrawal-based cognitive disengagement and emotional neutrality frameworks.
+      </p>
+    </div>
 
-  <div id="reader" class="tab hidden">
-    <p>
-      You are not external to this system.
-    </p>
+    <div id="effect" class="tab">
+      <p>
+        Repeated discontinuity events appear to generate emergent symbolic cognition structures across monitored systems.
+      </p>
+    </div>
+
+    <div id="reader" class="tab hidden">
+      <p>
+        You are not external to this system.
+      </p>
+    </div>
+
   </div>
 
 </div>
-
-<!-- FADE -->
-<div id="fadeOverlay"></div>
 
 <script>
 let triggered = false;
