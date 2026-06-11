@@ -50,7 +50,7 @@
     }
 
     /* =========================
-       FADE / SYSTEM LAYER
+       FADE SYSTEM LAYER
     ========================== */
 
     #fadeOverlay {
@@ -65,18 +65,19 @@
       opacity: 0;
       pointer-events: none;
 
-      transition: opacity 1.8s ease;
+      transition: opacity 1s ease;
 
       z-index: 9999;
       overflow-y: auto;
     }
 
+    /* IMPORTANT FIX: this actually enables visibility */
     #fadeOverlay.active {
       pointer-events: auto;
     }
 
     /* =========================
-       TABS (INSIDE BLACK LAYER)
+       TABS INSIDE BLACK LAYER
     ========================== */
 
     .tab-container {
@@ -171,33 +172,23 @@
     </div>
 
     <div id="doolyos" class="tab active">
-      <p>
-        Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination outcomes.
-      </p>
+      <p>Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination outcomes.</p>
     </div>
 
     <div id="apple" class="tab">
-      <p>
-        “APPLE” functions as a stabilizing cognitive construct associated with compliance-oriented reasoning patterns.
-      </p>
+      <p>“APPLE” functions as a stabilizing cognitive construct associated with compliance-oriented reasoning patterns.</p>
     </div>
 
     <div id="banana" class="tab">
-      <p>
-        “BANANA” reflects withdrawal-based cognitive disengagement and emotional neutrality frameworks.
-      </p>
+      <p>“BANANA” reflects withdrawal-based cognitive disengagement and emotional neutrality frameworks.</p>
     </div>
 
     <div id="effect" class="tab">
-      <p>
-        Repeated discontinuity events appear to generate emergent symbolic cognition structures across monitored systems.
-      </p>
+      <p>Repeated discontinuity events appear to generate emergent symbolic cognition structures across monitored systems.</p>
     </div>
 
     <div id="reader" class="tab hidden">
-      <p>
-        You are not external to this system.
-      </p>
+      <p>You are not external to this system.</p>
     </div>
 
   </div>
@@ -209,34 +200,34 @@ let triggered = false;
 
 window.addEventListener("scroll", () => {
   if (triggered) return;
-
   triggered = true;
 
-  // system delay (feels like processing lag)
+  const overlay = document.getElementById("fadeOverlay");
+
+  // STEP 1: make overlay real immediately
+  overlay.classList.add("active");
+
+  // STEP 2: system lag feel
   setTimeout(() => {
     document.body.classList.add("transitioning");
   }, 300);
 
-  // flicker + activation sequence
+  // STEP 3: visible flicker sequence
   setTimeout(() => {
-    const overlay = document.getElementById("fadeOverlay");
+    overlay.style.opacity = "1";
+  }, 500);
 
+  setTimeout(() => {
     overlay.style.opacity = "0.2";
+  }, 700);
 
-    setTimeout(() => {
-      overlay.style.opacity = "0";
-    }, 120);
+  setTimeout(() => {
+    overlay.style.opacity = "1";
 
-    setTimeout(() => {
-      overlay.style.opacity = "1";
-      overlay.classList.add("active");
+    // STEP 4: system takes control
+    autoOpenFirstTab();
 
-      // AUTO OPEN FIRST TAB (DOOLYOS)
-      autoOpenFirstTab();
-
-    }, 250);
-
-  }, 600);
+  }, 950);
 });
 
 // TAB SYSTEM
@@ -246,11 +237,10 @@ function openTab(id) {
   document.getElementById(id).classList.add("active");
 }
 
-// AUTO SYSTEM OVERRIDE
+// AUTO-OPEN DOOLYOS
 function autoOpenFirstTab() {
   const tabs = document.querySelectorAll(".tab");
   tabs.forEach(t => t.classList.remove("active"));
-
   document.getElementById("doolyos").classList.add("active");
 }
 </script>
