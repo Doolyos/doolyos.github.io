@@ -11,19 +11,21 @@
       color: #1a1a1a;
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
-      transition: transform 2s ease;
     }
 
-    body.transitioning {
-      transform: scale(1.15);
-    }
-
+    /* ARTICLE CONTAINER */
     .container {
       max-width: 760px;
       margin: 0 auto;
       padding: 80px 24px;
       background: #ffffff;
       box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      transition: opacity 2s ease, filter 2s ease;
+    }
+
+    body.transitioning .container {
+      opacity: 0.12;
+      filter: blur(2px);
     }
 
     h1 {
@@ -48,7 +50,7 @@
       margin-top: 60px;
     }
 
-    /* FADE TO BLACK OVERLAY */
+    /* BLACK SYSTEM LAYER */
     #fadeOverlay {
       position: fixed;
       top: 0;
@@ -64,8 +66,7 @@
       transition: opacity 2s ease;
 
       z-index: 9999;
-
-      color: yellow;
+      overflow-y: auto;
     }
 
     #fadeOverlay.active {
@@ -73,21 +74,22 @@
       pointer-events: auto;
     }
 
-    /* TABS INSIDE BLACK SPACE */
+    /* TABS INSIDE BLACK LAYER */
     .tab-container {
-      margin-top: 120px;
+      margin-top: 70px;
+      padding: 0 16px;
       font-family: "Times New Roman", serif;
-      font-size: 12px;
+      font-size: 14px;
       color: yellow;
       text-align: center;
     }
 
     .tabs {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
       margin-bottom: 20px;
-      flex-wrap: wrap;
     }
 
     .tabs button {
@@ -139,7 +141,7 @@
   </p>
 
   <p>
-    While regulated, cumulative exposure patterns remain insufficiently modeled in current frameworks.
+    While regulated, cumulative exposure patterns remain insufficiently modeled under current frameworks.
   </p>
 
   <div class="footnote">
@@ -148,7 +150,7 @@
 
 </div>
 
-<!-- BLACK REALM (THIS IS WHERE THE STORY GOES) -->
+<!-- BLACK SYSTEM REALM -->
 <div id="fadeOverlay">
 
   <div class="tab-container">
@@ -163,13 +165,13 @@
 
     <div id="doolyos" class="tab active">
       <p>
-        Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination parameters.
+        Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination outcomes.
       </p>
     </div>
 
     <div id="apple" class="tab">
       <p>
-        “APPLE” functions as a stabilizing cognitive structure associated with compliance-oriented reasoning patterns.
+        “APPLE” functions as a stabilizing cognitive construct associated with compliance-oriented reasoning patterns.
       </p>
     </div>
 
