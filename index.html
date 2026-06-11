@@ -153,6 +153,51 @@
 <div style="height: 800px;"></div>
 
 </div>
+<div id="fadeOverlay"></div>
 
+<style>
+#fadeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: black;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 2s ease;
+
+  z-index: 9999;
+}
+
+#fadeOverlay.active {
+  opacity: 1;
+}
+
+body {
+  transition: transform 2s ease;
+}
+
+body.transitioning {
+  transform: scale(1.15);
+}
+</style>
+
+<script>
+let triggered = false;
+
+window.addEventListener("scroll", () => {
+  if (triggered) return;
+
+  triggered = true;
+
+  document.body.classList.add("transitioning");
+
+  document.getElementById("fadeOverlay").classList.add("active");
+});
+</script>
 </body>
 </html>
