@@ -13,7 +13,6 @@
       line-height: 1.7;
     }
 
-    /* ARTICLE CONTAINER */
     .container {
       max-width: 760px;
       margin: 0 auto;
@@ -50,7 +49,10 @@
       margin-top: 60px;
     }
 
-    /* BLACK SYSTEM LAYER */
+    /* =========================
+       FADE / SYSTEM LAYER
+    ========================== */
+
     #fadeOverlay {
       position: fixed;
       top: 0;
@@ -63,18 +65,20 @@
       opacity: 0;
       pointer-events: none;
 
-      transition: opacity 2s ease;
+      transition: opacity 1.8s ease;
 
       z-index: 9999;
       overflow-y: auto;
     }
 
     #fadeOverlay.active {
-      opacity: 1;
       pointer-events: auto;
     }
 
-    /* TABS INSIDE BLACK LAYER */
+    /* =========================
+       TABS (INSIDE BLACK LAYER)
+    ========================== */
+
     .tab-container {
       margin-top: 70px;
       padding: 0 16px;
@@ -150,7 +154,10 @@
 
 </div>
 
-<!-- BLACK SYSTEM REALM -->
+<!-- =========================
+     BLACK SYSTEM REALM
+========================= -->
+
 <div id="fadeOverlay">
 
   <div class="tab-container">
@@ -205,14 +212,46 @@ window.addEventListener("scroll", () => {
 
   triggered = true;
 
-  document.body.classList.add("transitioning");
-  document.getElementById("fadeOverlay").classList.add("active");
+  // system delay (feels like processing lag)
+  setTimeout(() => {
+    document.body.classList.add("transitioning");
+  }, 300);
+
+  // flicker + activation sequence
+  setTimeout(() => {
+    const overlay = document.getElementById("fadeOverlay");
+
+    overlay.style.opacity = "0.2";
+
+    setTimeout(() => {
+      overlay.style.opacity = "0";
+    }, 120);
+
+    setTimeout(() => {
+      overlay.style.opacity = "1";
+      overlay.classList.add("active");
+
+      // AUTO OPEN FIRST TAB (DOOLYOS)
+      autoOpenFirstTab();
+
+    }, 250);
+
+  }, 600);
 });
 
+// TAB SYSTEM
 function openTab(id) {
   const tabs = document.querySelectorAll(".tab");
   tabs.forEach(t => t.classList.remove("active"));
   document.getElementById(id).classList.add("active");
+}
+
+// AUTO SYSTEM OVERRIDE
+function autoOpenFirstTab() {
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(t => t.classList.remove("active"));
+
+  document.getElementById("doolyos").classList.add("active");
 }
 </script>
 
