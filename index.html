@@ -12,7 +12,46 @@
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
     }
+.tab-container {
+  margin-top: 80px;
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  color: yellow;
+}
 
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: black;
+  color: yellow;
+  border: 1px solid yellow;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tab {
+  display: none;
+  max-width: 700px;
+  margin: auto;
+}
+
+.tab.active {
+  display: block;
+}
+
+.hidden-tab {
+  opacity: 0.1;
+}
+
+.hidden-tab:hover {
+  opacity: 1;
+}
     .container {
       max-width: 760px;
       margin: 0 auto;
@@ -65,6 +104,46 @@
       font-size: 13px;
       color: #777;
     }
+    .tab-container {
+  margin-top: 80px;
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  color: yellow;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: black;
+  color: yellow;
+  border: 1px solid yellow;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tab {
+  display: none;
+  max-width: 700px;
+  margin: auto;
+}
+
+.tab.active {
+  display: block;
+}
+
+.hidden-tab {
+  opacity: 0.1;
+}
+
+.hidden-tab:hover {
+  opacity: 1;
+}
   </style>
 </head>
 
@@ -147,7 +226,7 @@
   font-size: 20px;
   color: #444;
 ">
-  The subject was last observed running at night.
+  poopoopeepee.
 </p>
 
 <div style="height: 800px;"></div>
@@ -198,6 +277,64 @@ window.addEventListener("scroll", () => {
 
   document.getElementById("fadeOverlay").classList.add("active");
 });
+function openTab(id) {
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(t => t.classList.remove("active"));
+
+  document.getElementById(id).classList.add("active");
+}
 </script>
+  <div class="tab-container">
+
+  <div class="tabs">
+    <button onclick="openTab('doolyos')">Doolyos</button>
+    <button onclick="openTab('apple')">Apple</button>
+    <button onclick="openTab('banana')">Banana</button>
+    <button onclick="openTab('effect')">Systemic Effect</button>
+    <button onclick="openTab('reader')" class="hidden-tab">---</button>
+  </div>
+
+  <div id="doolyos" class="tab active">
+    <p>
+      Doolyos continues to present anomalous post-incident continuity markers across multiple observational datasets.
+      Standard physiological termination parameters are not consistently applicable, as post-event activity has been recorded in environments lacking confirmed causal continuity.
+      Analysts have noted increasing divergence between recorded event outcomes and retained subject awareness, suggesting either a flaw in data acquisition systems or an as-yet-undefined continuity phenomenon.
+    </p>
+  </div>
+
+  <div id="apple" class="tab">
+    <p>
+      “APPLE” has been classified within internal documentation as a stabilizing cognitive construct.
+      Field observations indicate its repeated emergence during periods of subject uncertainty, particularly following high-stress discontinuity events.
+      While superficially associated with nutritional produce categories, cross-referential behavioral analysis suggests the “APPLE” construct operates as a narrative moderator, often reinforcing compliance-based reasoning patterns and non-confrontational cognitive framing.
+    </p>
+  </div>
+
+  <div id="banana" class="tab">
+    <p>
+      “BANANA” demonstrates inverse behavioral function relative to APPLE-class entities.
+      It is consistently associated with withdrawal logic, emotional disengagement frameworks, and prioritization of subjective equilibrium over external accountability structures.
+      Notably, BANANA-class articulation frequently appears in populations exposed to repeated stress normalization environments, wherein phrases such as “protecting my peace” coincide with reduced external intervention behaviors.
+    </p>
+  </div>
+
+  <div id="effect" class="tab">
+    <p>
+      Following Subject Y-09’s repeated discontinuity events, correlation spikes have been observed in symbolic cognition patterns across monitored cognitive fields.
+      APPLE and BANANA constructs appear to increase in frequency and autonomy following each recorded incident, suggesting emergent memetic stabilization behavior.
+      This may indicate that repeated exposure to non-terminal outcomes produces symbolic externalization mechanisms within affected cognitive systems, effectively partitioning moral reasoning into discrete, consumable frameworks.
+    </p>
+  </div>
+
+  <div id="reader" class="tab hidden">
+    <p>
+      If you are reading this section, it is assumed you have already engaged with prior documentation layers without interruption.
+      This implies continued exposure to recursive observational framing structures.
+      For clarity: you are not the observer outside this system.
+      You are an active participant within the dataset being described.
+    </p>
+  </div>
+
+</div>
 </body>
 </html>
