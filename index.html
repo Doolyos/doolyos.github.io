@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -11,47 +12,13 @@
       color: #1a1a1a;
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
+      transition: transform 2s ease;
     }
-.tab-container {
-  margin-top: 80px;
-  font-family: "Times New Roman", serif;
-  font-size: 12px;
-  color: yellow;
-}
 
-.tabs {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    body.transitioning {
+      transform: scale(1.15);
+    }
 
-.tabs button {
-  background: black;
-  color: yellow;
-  border: 1px solid yellow;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.tab {
-  display: none;
-  max-width: 700px;
-  margin: auto;
-}
-
-.tab.active {
-  display: block;
-}
-
-.hidden-tab {
-  opacity: 0.1;
-}
-
-.hidden-tab:hover {
-  opacity: 1;
-}
     .container {
       max-width: 760px;
       margin: 0 auto;
@@ -72,11 +39,6 @@
       margin-bottom: 40px;
       border-bottom: 1px solid #ddd;
       padding-bottom: 20px;
-    }
-
-    .meta span {
-      display: block;
-      margin-top: 4px;
     }
 
     p {
@@ -104,46 +66,68 @@
       font-size: 13px;
       color: #777;
     }
+
+    /* FADE OVERLAY */
+    #fadeOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s ease;
+      z-index: 9999;
+    }
+
+    #fadeOverlay.active {
+      opacity: 1;
+    }
+
+    /* TABS */
     .tab-container {
-  margin-top: 80px;
-  font-family: "Times New Roman", serif;
-  font-size: 12px;
-  color: yellow;
-}
+      margin-top: 80px;
+      font-family: "Times New Roman", serif;
+      font-size: 12px;
+      color: yellow;
+    }
 
-.tabs {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-.tabs button {
-  background: black;
-  color: yellow;
-  border: 1px solid yellow;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
+    .tabs button {
+      background: black;
+      color: yellow;
+      border: 1px solid yellow;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+    }
 
-.tab {
-  display: none;
-  max-width: 700px;
-  margin: auto;
-}
+    .tab {
+      display: none;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.tab.active {
-  display: block;
-}
+    .tab.active {
+      display: block;
+    }
 
-.hidden-tab {
-  opacity: 0.1;
-}
+    .hidden-tab {
+      opacity: 0.1;
+    }
 
-.hidden-tab:hover {
-  opacity: 1;
-}
+    .hidden-tab:hover {
+      opacity: 1;
+    }
+
   </style>
 </head>
 
@@ -154,9 +138,9 @@
   <h1>On the Increasing Chemical Load in Commercial Produce</h1>
 
   <div class="meta">
-    <span>By: Department of Agricultural Systems Review</span>
-    <span>Published: Internal Review Document — 2032</span>
-    <span>Classification: Public Summary Extract</span>
+    <p>By: Department of Agricultural Systems Review</p>
+    <p>Published: Internal Review Document — 2032</p>
+    <p>Classification: Public Summary Extract</p>
   </div>
 
   <p>
@@ -170,11 +154,11 @@
   <div class="section-title">Observed Trends</div>
 
   <p>
-    Across multiple distribution networks, produce items such as apples and bananas demonstrate consistent trace signatures of chemical stabilization agents intended to extend shelf life and improve aesthetic uniformity.
+    Across multiple distribution networks, produce items such as apples and bananas demonstrate consistent trace signatures of chemical stabilization agents.
   </p>
 
   <p>
-    These trends are not inherently unusual within industrial agriculture systems; however, their increasing normalization warrants continued observation.
+    These trends are not inherently unusual, however their increasing normalization warrants continued observation.
   </p>
 
   <div class="quote">
@@ -182,109 +166,22 @@
   </div>
 
   <p>
-    Further research is ongoing regarding potential systemic effects of long-term exposure to combined agricultural agents across multiple food categories.
+    Further research is ongoing.
   </p>
 
-  <div class="section-title">Preliminary Conclusion</div>
+  <div class="section-title">Conclusion</div>
 
   <p>
-    At present, no immediate public risk has been identified. However, the consistency of data divergence across independent studies suggests that current models may be insufficient in accounting for long-term cumulative variables.
+    No immediate public risk has been identified.
   </p>
 
-  <p>
-    Additional review is recommended.
-  </p>
-
-<div class="footnote">
-    This document is part of an ongoing archival sequence. Sectional discontinuities may occur in later revisions.
-</div>
-
-<div style="height: 700px;"></div>
-
-<p style="
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  letter-spacing: 1px;
-">
-  Observation continues.
-</p>
-
-<div style="height: 600px;"></div>
-
-<h2 style="
-  text-align: center;
-  font-size: 56px;
-  font-weight: normal;
-  margin-bottom: 60px;
-">
-  CHAPTER ONE
-</h2>
-
-<p style="
-  text-align: center;
-  font-size: 20px;
-  color: #444;
-">
-  poopoopeepee.
-</p>
-
-<div style="height: 800px;"></div>
+  <div class="footnote">
+    Sectional discontinuities may occur in later revisions.
+  </div>
 
 </div>
-<div id="fadeOverlay"></div>
 
-<style>
-#fadeOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background: black;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition: opacity 2s ease;
-
-  z-index: 9999;
-}
-
-#fadeOverlay.active {
-  opacity: 1;
-}
-
-body {
-  transition: transform 2s ease;
-}
-
-body.transitioning {
-  transform: scale(1.15);
-}
-</style>
-
-<script>
-let triggered = false;
-
-window.addEventListener("scroll", () => {
-  if (triggered) return;
-
-  triggered = true;
-
-  document.body.classList.add("transitioning");
-
-  document.getElementById("fadeOverlay").classList.add("active");
-});
-function openTab(id) {
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach(t => t.classList.remove("active"));
-
-  document.getElementById(id).classList.add("active");
-}
-</script>
-  <div class="tab-container">
+<div class="tab-container">
 
   <div class="tabs">
     <button onclick="openTab('doolyos')">Doolyos</button>
@@ -296,45 +193,57 @@ function openTab(id) {
 
   <div id="doolyos" class="tab active">
     <p>
-      Doolyos continues to present anomalous post-incident continuity markers across multiple observational datasets.
-      Standard physiological termination parameters are not consistently applicable, as post-event activity has been recorded in environments lacking confirmed causal continuity.
-      Analysts have noted increasing divergence between recorded event outcomes and retained subject awareness, suggesting either a flaw in data acquisition systems or an as-yet-undefined continuity phenomenon.
+      Subject Y-09 continues to present post-event continuity anomalies inconsistent with expected termination outcomes.
     </p>
   </div>
 
   <div id="apple" class="tab">
     <p>
-      “APPLE” has been classified within internal documentation as a stabilizing cognitive construct.
-      Field observations indicate its repeated emergence during periods of subject uncertainty, particularly following high-stress discontinuity events.
-      While superficially associated with nutritional produce categories, cross-referential behavioral analysis suggests the “APPLE” construct operates as a narrative moderator, often reinforcing compliance-based reasoning patterns and non-confrontational cognitive framing.
+      “APPLE” functions as a stabilizing cognitive structure associated with non-confrontational reasoning patterns.
     </p>
   </div>
 
   <div id="banana" class="tab">
     <p>
-      “BANANA” demonstrates inverse behavioral function relative to APPLE-class entities.
-      It is consistently associated with withdrawal logic, emotional disengagement frameworks, and prioritization of subjective equilibrium over external accountability structures.
-      Notably, BANANA-class articulation frequently appears in populations exposed to repeated stress normalization environments, wherein phrases such as “protecting my peace” coincide with reduced external intervention behaviors.
+      “BANANA” reflects withdrawal-based cognitive disengagement and emotional neutrality frameworks.
     </p>
   </div>
 
   <div id="effect" class="tab">
     <p>
-      Following Subject Y-09’s repeated discontinuity events, correlation spikes have been observed in symbolic cognition patterns across monitored cognitive fields.
-      APPLE and BANANA constructs appear to increase in frequency and autonomy following each recorded incident, suggesting emergent memetic stabilization behavior.
-      This may indicate that repeated exposure to non-terminal outcomes produces symbolic externalization mechanisms within affected cognitive systems, effectively partitioning moral reasoning into discrete, consumable frameworks.
+      Repeated discontinuity events appear to increase symbolic cognition emergence across monitored datasets.
     </p>
   </div>
 
   <div id="reader" class="tab hidden">
     <p>
-      If you are reading this section, it is assumed you have already engaged with prior documentation layers without interruption.
-      This implies continued exposure to recursive observational framing structures.
-      For clarity: you are not the observer outside this system.
-      You are an active participant within the dataset being described.
+      You are not external to this system.
     </p>
   </div>
 
 </div>
+
+<!-- FADE -->
+<div id="fadeOverlay"></div>
+
+<script>
+let triggered = false;
+
+window.addEventListener("scroll", () => {
+  if (triggered) return;
+
+  triggered = true;
+
+  document.body.classList.add("transitioning");
+  document.getElementById("fadeOverlay").classList.add("active");
+});
+
+function openTab(id) {
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(t => t.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
 </body>
 </html>
